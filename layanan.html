@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Kami</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            color: #181616;
+        }
+
+        /* Style untuk Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #25B178;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .logo-container h1 {
+            font-size: 1.5rem;
+            color: #f1efef;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+        text-decoration: none;
+        color: #0a0a0a;
+        }
+
+        .menu a:hover {
+        color: #F0F0F0; /* Efek hover pada menu */
+        }
+
+       
+        /* Style untuk burger menu (tampilan mobile) */
+        .burger-menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger-menu .line {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+        }
+        
+        /* Style responsif untuk tampilan mobile */
+        @media screen and (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                background-color: #fff;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+            }
+
+            .burger-menu {
+                display: block;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+        }
+        /* Style untuk Section Layanan */
+        .service-section {
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .service-section h2 {
+            color: #42445A;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .service {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .service-item {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-item img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .service-item h3 {
+            color: #333333;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .service-item p {
+            color: #666666;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+    /* Responsif untuk layanan di layar kecil */
+    @media (max-width: 768px) {
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 80%;
+        margin-bottom: 20px;
+        padding: 15px; /* Mengurangi padding untuk layar kecil */
+    }
+
+    .service-item img {
+        width: 70px; /* Mengurangi ukuran gambar */
+        margin-bottom: 15px; /* Mengurangi margin bawah gambar */
+    }
+
+    .service-item h3 {
+        font-size: 20px; /* Mengurangi ukuran font judul */
+        margin-bottom: 10px; /* Mengurangi margin bawah judul */
+    }
+
+    .service-item p {
+        font-size: 14px; /* Mengurangi ukuran font paragraf */
+    }
+}
+/* Style untuk Footer */
+footer {
+            background-color: #222;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* Style untuk container dalam footer */
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        /* Style untuk setiap section dalam footer */
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            color: #FFFFFF;
+            margin-bottom: 15px;
+        }
+
+        /* Style untuk daftar kontak dalam footer */
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        /* Style untuk link dalam footer */
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .footer-section ul li a:hover {
+            color: #bbb;
+        }
+
+        .footer-section p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        /* Style untuk logo dalam footer */
+        .footer-section.logo img {
+            max-width: 80px;
+            margin-bottom: 10px;
+        }
+
+        .footer-section.logo p {
+            font-size: 18px;
+        }
+
+/* Style responsif untuk tampilan footer pada mobile */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+        footer .address a {
+        text-decoration: none;
+        color: #f8f8f8;
+        }
+
+        footer .address a:hover {
+            color: #810ab8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Access Media Logo">
+            <h1>ACCESS MEDIA</h1>
+        </div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="layanan.html">Layanan</a>
+            <a href="#">Aplikasi</a>
+            <a href="klien.html">Klien</a>
+            <a href="tentang.html">Tentang</a>
+        </div>
+        <!-- Bagian Menu Burger (untuk navigasi mobile) -->
+        <div class="burger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+    </header>
+    <div class="service-section">
+        <h2>Layanan Kami</h2>
+        <div class="service">
+            <div class="service-item">
+                <img src="images/developing.png" alt="Ikon Developing">
+                <h3>Developing</h3>
+                <p>Kami menyediakan layanan pengembangan aplikasi yang membantu Anda dalam mempermudah aktivitas bisnis Anda.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/consulting.png" alt="Ikon Consulting">
+                <h3>Consulting</h3>
+                <p>Kami siap memberikan konsultasi terkait aplikasi yang paling sesuai dengan kebutuhan bisnis Anda.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/supporting.png" alt="Ikon Supporting">
+                <h3>Supporting</h3>
+                <p>Kami menyediakan dukungan teknis melalui telepon dan remote untuk mengatasi kendala aplikasi yang Anda alami.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/training.png" alt="Ikon Training">
+                <h3>Training</h3>
+                <p>Kami menawarkan pelatihan untuk memastikan Anda dapat menggunakan dan mengoperasikan aplikasi dengan baik.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/data service.png" alt="Ikon Link and Data Service">
+                <h3>Link and Data Service</h3>
+                <p>Kami membantu menghubungkan data Anda ke server untuk akses yang lebih mudah dari berbagai lokasi.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menghubungkan ke file JavaScript -->
+    <script src="js/script.js"></script>
+<!-- Bagian Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Bagian Kontak -->
+        <div class="footer-section contact">
+            <h3>Hubungi Kami</h3>
+            <ul>
+                <li><a href="https://wa.me/085220419992" target="_blank">📞 0852-2041-9992</a></li>
+                <li><a href="https://www.facebook.com/AccessMedia" target="_blank">📘 Access Media</a></li>
+                <li><a href="https://www.youtube.com/AccessMedia" target="_blank">▶️ Access Media</a></li>
+            </ul>
+        </div>
+        
+        <!-- Bagian Alamat -->
+        <div class="footer-section address">
+            <h3>Alamat</h3>
+            <a href="https://maps.google.com/?q=Access%20Media%20Database">Jl. Noenoeng Tisnasaputra, Kahuripan, Kec. Tawang, Tasikmalaya, Jawa Barat 46115</a>
+        </div>
+        <!-- Bagian Logo di Footer -->
+        <div class="footer-section logo">
+            <img src="images/logo.png" alt="Access Media Logo">
+            <p>Access Media</p>
+        </div>
+    </div>
+</footer>
+<!-- Akhir Bagian Footer -->
+</body>
+</html>

@@ -1,0 +1,402 @@
+/* Style umum untuk body dan html */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style untuk Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #25B178;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style untuk logo dan teks dalam navbar */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px; /* Memberikan jarak antara logo dan teks */
+}
+
+.logo-container h1 {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    margin: 0;
+    font-weight: normal; /* Sesuaikan berat font sesuai keinginan */
+}
+
+/* Style untuk menu navigasi dalam navbar */
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #0a0a0a;
+}
+.menu a:hover {
+    color: #F0F0F0; /* Efek hover pada menu */
+}
+
+/* Style untuk burger menu (tampilan mobile) */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-menu .line {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+}
+
+/* Style untuk Hero Section */
+.hero {
+    background: url('../images/ooo.jpg') no-repeat center center/cover;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Style untuk tombol CTA (Call To Action) */
+.cta-button {
+    padding: 15px 30px;
+    background-color: #8B008B;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    background-color: #9400D3;
+}
+
+/* Style responsif untuk tampilan mobile */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+}
+/* Style untuk Services Section */
+.services-section {
+    background-color: #FFFFFF;
+    padding: 50px 0;
+    text-align: center;
+    margin: 40px 0; /* Menambahkan jarak (margin) di atas dan di bawah section */
+}
+
+.services-section h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #383838;
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 0 20px; /* Menambahkan padding untuk jarak antara service-item dan tepi section */
+}
+
+.service-item {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 6px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px; /* Menambahkan jarak antara item-item service */
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+}
+
+.service-item img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #303030;
+}
+
+.service-item p {
+    font-size: 16px;
+    color: #3B3B3B;
+}
+
+/* Responsif untuk layanan di layar kecil */
+@media (max-width: 768px) {
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 80%;
+        margin-bottom: 20px;
+        padding: 15px; /* Mengurangi padding untuk layar kecil */
+    }
+
+    .service-item img {
+        width: 70px; /* Mengurangi ukuran gambar */
+        margin-bottom: 15px; /* Mengurangi margin bawah gambar */
+    }
+
+    .service-item h3 {
+        font-size: 20px; /* Mengurangi ukuran font judul */
+        margin-bottom: 10px; /* Mengurangi margin bawah judul */
+    }
+
+    .service-item p {
+        font-size: 14px; /* Mengurangi ukuran font paragraf */
+    }
+}
+
+
+
+/* Style untuk Section Aplikasi Unggulan */
+.featured-apps {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.featured-apps h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+.apps-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.app {
+    position: relative;
+    width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.app img {
+    width: 100%;
+    height: auto;
+}
+
+.app-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-overlay h3 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #25B178;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+/* Tambahkan animasi saat tombol ditekan */
+.cta-button:active {
+    transform: scale(0.95); /* Sedikit mengecil saat ditekan */
+    background-color: #00FBB2; /* Ganti warna saat ditekan */
+}
+
+.cta-button:hover {
+    background-color: #19987B;
+}
+
+/* Style untuk Services Section */
+.services-section {
+    background-color: #FFFFFF;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+.service-item {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.service-item img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #303030;
+}
+
+.service-item p {
+    font-size: 16px;
+    color: #3B3B3B;
+}
+
+/* Style Responsif */
+@media screen and (max-width: 768px) {
+    .apps-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 80%;
+    }
+}
+
+/* Style untuk Footer */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Style untuk container dalam footer */
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* Style untuk setiap section dalam footer */
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+/* Style untuk daftar kontak dalam footer */
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Style untuk link dalam footer */
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.footer-section ul li a:hover {
+    color: #bbb;
+}
+
+.footer-section p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Style untuk logo dalam footer */
+.footer-section.logo img {
+    max-width: 80px;
+    margin-bottom: 10px;
+}
+
+.footer-section.logo p {
+    font-size: 18px;
+}
+
+/* Style responsif untuk tampilan footer pada mobile */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}

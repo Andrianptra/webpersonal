@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+             /* Style untuk Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #25B178;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Style untuk logo dan teks dalam navbar */
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-container img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px; /* Memberikan jarak antara logo dan teks */
+        }
+        
+        .logo-container h1 {
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            margin: 0;
+            font-weight: normal;
+        }
+        /* Style untuk menu */
+        .menu {
+            display: flex;
+            gap: 20px; /* Memberikan jarak antar item menu */
+        }
+
+        .menu a {
+            color: #0e0d0d;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        /* Style untuk burger menu (tampilan mobile) */
+        .burger-menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger-menu .line {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+        }
+        /* Style responsif untuk tampilan mobile */
+        @media screen and (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                background-color: #fff;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+            }
+
+            .burger-menu {
+                display: block;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+        }
+        /* Responsif untuk layanan di layar kecil */
+    @media (max-width: 768px) {
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 80%;
+        margin-bottom: 20px;
+        padding: 15px; /* Mengurangi padding untuk layar kecil */
+    }
+
+    .service-item img {
+        width: 70px; /* Mengurangi ukuran gambar */
+        margin-bottom: 15px; /* Mengurangi margin bawah gambar */
+    }
+
+    .service-item h3 {
+        font-size: 20px; /* Mengurangi ukuran font judul */
+        margin-bottom: 10px; /* Mengurangi margin bawah judul */
+    }
+
+    .service-item p {
+        font-size: 14px; /* Mengurangi ukuran font paragraf */
+    }
+}
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        header h1 {
+            margin: 10px 0;
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .content p {
+            margin: 20px 0;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        footer {
+            background-color: #161616;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+       /* Style untuk Footer */
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* Style untuk container dalam footer */
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        /* Style untuk setiap section dalam footer */
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            color: #FFFFFF;
+            margin-bottom: 15px;
+        }
+
+        /* Style untuk daftar kontak dalam footer */
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        /* Style untuk link dalam footer */
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .footer-section ul li a:hover {
+            color: #bbb;
+        }
+
+        .footer-section p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        /* Style untuk logo dalam footer */
+        .footer-section.logo img {
+            max-width: 80px;
+            margin-bottom: 10px;
+        }
+
+        .footer-section.logo p {
+            font-size: 18px;
+        }
+
+/* Style responsif untuk tampilan footer pada mobile */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+        footer .address a {
+        text-decoration: none;
+        color: #f8f8f8;
+        }
+
+        footer .address a:hover {
+            color: #810ab8;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Access Media Logo">
+            <h1>ACCESS MEDIA</h1>
+        </div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="layanan.html">Layanan</a>
+            <a href="#">Aplikasi</a>
+            <a href="klien.html">Klien</a>
+            <a href="tentang.html">Tentang</a>
+        </div>
+         <!-- Bagian Menu Burger (untuk navigasi mobile) -->
+         <div class="burger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+     <!-- Menghubungkan ke file JavaScript -->
+     <script src="js/script.js"></script>
+
+<header>
+    <img src="images/logo.png" alt="Access Media Logo">
+    <h1>Access Media</h1>
+</header>
+
+<div class="container">
+    <div class="content">
+        <p>Kami adalah perusahaan yang bergerak dalam bidang teknologi informasi khusus dalam pembuatan aplikasi untuk pengelolaan data, baik bagi UMKM, perusahaan swasta, juga organisasi pemerintah. Aplikasi yang kami buat bersifat custom application, dimana aplikasi yang dibuat disusun sesuai dengan kebutuhan dan permintaan klien. Sehingga hasil aplikasi yang dibuat sesuai dengan kebutuhan real di lapangan.</p>
+        <p>Kami telah membantu menangani lebih dari 100 lebih klien dalam berbagai bidang usaha seperti toko komputer, toko kelontongan, bengkel, distributor barang, depo, toko bangunan, sekolah, pesantren, perusahaan-perusahaan swasta juga beberapa klien di pemerintahan.</p>
+    </div>
+</div>
+
+<!-- Bagian Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Bagian Kontak -->
+        <div class="footer-section contact">
+            <h3>Hubungi Kami</h3>
+            <ul>
+                <li><a href="https://wa.me/085220419992" target="_blank">📞 0852-2041-9992</a></li>
+                <li><a href="https://www.facebook.com/AccessMedia" target="_blank">📘 Access Media</a></li>
+                <li><a href="https://www.youtube.com/AccessMedia" target="_blank">▶️ Access Media</a></li>
+            </ul>
+        </div>
+        
+        <!-- Bagian Alamat -->
+        <div class="footer-section address">
+            <h3>Alamat</h3>
+            <a href="https://maps.google.com/?q=Access%20Media%20Database">Jl. Noenoeng Tisnasaputra, Kahuripan, Kec. Tawang, Tasikmalaya, Jawa Barat 46115</a>
+        </div>
+        <!-- Bagian Logo di Footer -->
+        <div class="footer-section logo">
+            <img src="images/logo.png" alt="Access Media Logo">
+            <p>Access Media</p>
+        </div>
+    </div>
+</footer>
+<!-- Akhir Bagian Footer -->
+</body>
+</html>
+
+
+</body>
+</html>

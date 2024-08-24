@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Media Clients</title>
+
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            color: #181616;
+        }
+    /* Style untuk Navbar */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #25B178;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Style untuk logo dan teks dalam navbar */
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+    
+    .logo-container img {
+        width: 50px;
+        height: auto;
+        margin-right: 10px; /* Memberikan jarak antara logo dan teks */
+    }
+    
+    .logo-container h1 {
+        font-size: 1.5rem;
+        color: #FFFFFF;
+        margin: 0;
+        font-weight: normal;
+    }
+
+    /* Style untuk menu */
+    .menu {
+        display: flex;
+        gap: 20px; /* Memberikan jarak antar item menu */
+    }
+
+    .menu a {
+        color: #181717;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+
+    .menu a:hover {
+        color: #F0F0F0; /* Efek hover pada menu */
+    }
+    /* Style untuk burger menu (tampilan mobile) */
+    .burger-menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger-menu .line {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+        }
+        
+        /* Style responsif untuk tampilan mobile */
+        @media screen and (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                background-color: #fff;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+            }
+
+            .burger-menu {
+                display: block;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+        }
+    /* Style untuk container client */
+    .container {
+        display: flex;
+        flex-wrap: wrap; /* Membuat item dapat membungkus jika melebihi lebar kontainer */
+        gap: 50px; /* Jarak antar item client */
+        padding: 20px;
+        justify-content: flex-start; /* Menyusun item dari kiri ke kanan */
+    }
+
+    .client {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100px; /* Sesuaikan lebar sesuai kebutuhan */
+    }
+
+    .client img {
+        width: 100px; /* Sesuaikan ukuran gambar sesuai kebutuhan */
+        height: auto;
+        margin-bottom: 10px; /* Jarak antara gambar dan teks */
+    }
+
+    .client p {
+        text-align: center;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+    /* Responsif untuk layanan di layar kecil */
+    @media (max-width: 768px) {
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 80%;
+        margin-bottom: 20px;
+        padding: 15px; /* Mengurangi padding untuk layar kecil */
+    }
+
+    .service-item img {
+        width: 70px; /* Mengurangi ukuran gambar */
+        margin-bottom: 15px; /* Mengurangi margin bawah gambar */
+    }
+
+    .service-item h3 {
+        font-size: 20px; /* Mengurangi ukuran font judul */
+        margin-bottom: 10px; /* Mengurangi margin bawah judul */
+    }
+
+    .service-item p {
+        font-size: 14px; /* Mengurangi ukuran font paragraf */
+    }
+}
+       /* Style untuk Footer */
+       footer {
+            background-color: #222;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* Style untuk container dalam footer */
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        /* Style untuk setiap section dalam footer */
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            color: #FFFFFF;
+            margin-bottom: 15px;
+        }
+
+        /* Style untuk daftar kontak dalam footer */
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        /* Style untuk link dalam footer */
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .footer-section ul li a:hover {
+            color: #bbb;
+        }
+
+        .footer-section p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        /* Style untuk logo dalam footer */
+        .footer-section.logo img {
+            max-width: 80px;
+            margin-bottom: 10px;
+        }
+
+        .footer-section.logo p {
+            font-size: 18px;
+        }
+
+/* Style responsif untuk tampilan footer pada mobile */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+        footer .address a {
+        text-decoration: none;
+        color: #f8f8f8;
+        }
+
+        footer .address a:hover {
+            color: #810ab8;
+        }
+    </style>
+
+    </head>
+    <body>
+    <header>
+     <div class="navbar">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Access Media Logo">
+            <h1>ACCESS MEDIA</h1>
+        </div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="layanan.html">Layanan</a>
+            <a href="#">Aplikasi</a>
+            <a href="klien.html">Klien</a>
+            <a href="tentang.html">Tentang</a>
+        </div>
+         <!-- Bagian Menu Burger (untuk navigasi mobile) -->
+         <div class="burger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+    </header>
+    <div class="container">
+        <div class="client">
+            <img src="images/dinkes subang.png" alt="Dinas Kesehatan Kabupaten Subang">
+            <p>Dinas Kesehatan Kabupaten Subang</p>
+        </div>
+        <div class="client">
+            <img src="images/BLUD.png" alt="BLUD Kabupaten Subang">
+            <p>BLUD Kabupaten Subang</p>
+        </div>
+        <div class="client">
+            <img src="images/LPT Saraswati.png" alt="LPT Saraswati">
+            <p>LPT Saraswati</p>
+        </div>
+        <div class="client">
+            <img src="images/ABM Komputer.png" alt="ABM Computer">
+            <p>ABM Computer</p>
+        </div>
+        <div class="client">
+            <img src="images/Al Hasan.png" alt="Al-Hasan">
+            <p>Al-Hasan</p>
+        </div>
+        <div class="client">
+            <img src="images/BMT Almuhajirin.png" alt="BMT Al-Muhajirin">
+            <p>BMT Al-Muhajirin</p>
+        </div>
+        <div class="client">
+            <img src="images/Padaringan.png" alt="Padaringan">
+            <p>Padaringan</p>
+        </div>
+        <div class="client">
+            <img src="images/smartneutron.png" alt="Smart Neutron">
+            <p>SMARTNEUTRON/p>
+        </div>
+        <div class="client">
+            <img src="images/Niaga sejahtera.png" alt="Niaga Sejahtera">
+            <p>CV Niaga Sejahtera</p>
+        </div>
+        <div class="client">
+            <img src="images/grosirberkahjaya.png" alt="grosirberkahjaya">
+            <p>Grosir Berkah Jaya</p>
+        </div>
+        <div class="client">
+            <img src="images/pangkalanpancingtasik.png" alt="pangkalanpancingtasik">
+            <p>Pangkalan Pancing Tasiklamaya</p>
+        </div>
+        <div class="client">
+            <img src="images/coboy.png" alt="coboy">
+            <p>Coboy</p>
+        </div>
+        <div class="client">
+            <img src="images/sentana.png" alt="Sentana">
+            <p>Sentana Brownies Meleleh</p>
+        </div>
+        <div class="client">
+            <img src="images/Harapan putra.png" alt="Harapan putra">
+            <p>Harapan Putra</p>
+        </div>
+        <div class="client">
+            <img src="images/sukasari.png" alt="sukasari">
+            <p>Sukasari</p>
+        </div>
+        <div class="client">
+            <img src="images/berkah syawal.png" alt="Berkah syawal">
+            <p>Berkah Syawal</p>
+        </div>
+        <div class="client">
+            <img src="images/arjuna puta oleh oleh.png" alt="arjuna puta oleh oleh">
+            <p>Arjuna Putra Oleh Oleh</p>
+        </div>
+        <div class="client">
+            <img src="images/tb nugraha.png" alt="TB anugrah">
+            <p>TB Anugrah</p>
+        </div>
+        <div class="client">
+            <img src="images/Cilegon Style Indonesia.png" alt="Cilegon Style Indonesia">
+            <p>Cilegon Style Indonesia</p>
+        </div>
+        <div class="client">
+            <img src="images/Tasik Oto Prima.png" alt="Tasik Oto Prima">
+            <p>Tasik Oto Prima(TOP)</p>
+        </div>
+        <div class="client">
+            <img src="images/Budi Motor Tasik.png" alt="Budi Motor Tasik">
+            <p>Budi Motor Tasikmalaya</p>
+        </div>
+        <div class="client">
+            <img src="images/Juanda.png" alt="JUANDA Petshop">
+            <p>Juanda PetShop</p>
+        </div>
+        <div class="client">
+            <img src="images/alesha.png" alt="ALESHA Petshop">
+            <p>ALESHA PetShop</p>
+        </div>
+        <div class="client">
+            <img src="images/JS pet.png" alt="JS PetShop">
+            <p>JS PetShop</p>
+        </div>
+        <div class="client">
+            <img src="images/JB Petshop.png" alt="JB Petshop">
+            <p>JB PetShop</p>
+        </div>
+        <div class="client">
+            <img src="images/JR Petshop.png" alt="JR PetShop">
+            <p>JR PetShop</p>
+        </div>
+        <div class="client">
+            <img src="images/JJ Petshop.png" alt="JJ PetShop">
+            <p>JJ PetShop</p>
+        </div>
+        <div class="client">
+            <img src="images/JC Petshop.png" alt="JC PetShop">
+            <p>JC PetShop</p>
+        </div>
+        <div class="client">
+            <img src="images/Jaya Kelinci Petshop.png" alt="Jaya Kelinci Petshop">
+            <p>Jaya Kelinci PetShop</p>
+        </div>
+        <div class="client">
+            <img src="images/JP Petshop.png" alt="JP PetShop">
+            <p>JP Petshop</p>
+        </div>
+        <div class="client">
+            <img src="images/KIA Petshop.png" alt="KIA PetShop">
+            <p>KIA PetShop</p>
+        </div>
+        <div class="client">
+            <img src="images/JG Petshop.png" alt="JG Petshop">
+            <p>JG Petshop</p>
+        </div>
+        <div class="client">
+            <img src="images/Amazon.png" alt="Amazon">
+            <p>Amazon</p>
+        </div>
+        <div class="client">
+            <img src="images/Garden.png" alt="Garden">
+            <p>Garden</p>
+        </div>
+        <div class="client">
+            <img src="images/LarasGrup.png" alt="Laras Group">
+            <p>Laras Group</p>
+        </div>
+        <div class="client">
+            <img src="images/Master PetShop.png" alt="Master Petshop">
+            <p>Master PetShop</p>
+        </div>
+        <div class="client">
+            <img src="images/Alaska Petshop.png " alt="Alaska">
+            <p>Alaska PetShop</p>
+        </div>
+        <div class="client">
+            <img src="images/JN PetShop.png" alt="JN Petshop">
+            <p>JN PetShop</p>
+        </div>
+        <div class="client">
+            <img src="images/JK PetShop.png" alt="JK Petshop">
+            <p>JK PetShop</p>
+        </div>
+        <div class="client">
+            <img src="images/Gudang PetShop.png" alt="Gudang Petshop">
+            <p>Gudang PetShop</p>
+        </div>
+        <div class="client">
+            <img src="images/Petshop Potonyono.png" alt="Soponyono Petshop">
+            <p>PetShop Soponyono</p>
+        </div>
+        <div class="client">
+            <img src="images/JD PetShop.png" alt="JD Petshop">
+            <p>JD PetShop</p>
+        </div>
+        <div class="client">
+            <img src="images/JT PetShop.png" alt="JT Petshop">
+            <p>JT PetShop</p>
+        </div>
+        <div class="client">
+            <img src="images/Karya Jaya Abadi.png" alt="Karya Jaya Abadi">
+            <p>Karya Jaya Abadi</p>
+        </div>
+        <div class="client">
+            <img src="images/terus jaya.png" alt="terus jaya furniture">
+            <p>Terus Jaya Furniture</p>
+        </div>
+        <!-- Tambahkan lebih banyak div client untuk gambar lainnya -->
+    </div>
+     <!-- Menghubungkan ke file JavaScript -->
+     <script src="js/script.js"></script>
+    </body>
+    </html>
+    
+     <!-- Bagian Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Bagian Kontak -->
+        <div class="footer-section contact">
+            <h3>Hubungi Kami</h3>
+            <ul>
+                <li><a href="https://wa.me/085220419992" target="_blank">📞 0852-2041-9992</a></li>
+                <li><a href="https://www.facebook.com/AccessMedia" target="_blank">📘 Access Media</a></li>
+                <li><a href="https://www.youtube.com/AccessMedia" target="_blank">▶️ Access Media</a></li>
+            </ul>
+        </div>
+        
+        <!-- Bagian Alamat -->
+        <div class="footer-section address">
+            <h3>Alamat</h3>
+            <a href="https://maps.google.com/?q=Access%20Media%20Database">Jl. Noenoeng Tisnasaputra, Kahuripan, Kec. Tawang, Tasikmalaya, Jawa Barat 46115</a>
+        </div>
+        <!-- Bagian Logo di Footer -->
+        <div class="footer-section logo">
+            <img src="images/logo.png" alt="Access Media Logo">
+            <p>Access Media</p>
+        </div>
+    </div>
+</footer>
+<!-- Akhir Bagian Footer -->
